@@ -13,23 +13,23 @@ void setup()
 
 void loop()
 {
-  analogWrite(3, LOW);
-  analogWrite(5, 150);
-  analogWrite(6, LOW);
-  analogWrite(9, 150);
   Serial.println(analogRead(A0));
   Serial.println(analogRead(A1));
   if (analogRead(A0) > 200) {
-    analogWrite(3, LOW);
-    analogWrite(5, 150);
-    analogWrite(6, LOW);
-    analogWrite(9, LOW);
+    analogWrite(6, 150);
+    analogWrite(9, 0);
+  }
+  else{
+    analogWrite(6, 0);
+    analogWrite(9, 150);
   }
   if (analogRead(A1) > 200) {
-      analogWrite(3, LOW);
-      analogWrite(5, LOW);
-      analogWrite(6, LOW);
-      analogWrite(9, 150);
+      analogWrite(3, 0);
+      analogWrite(5, 150);
+  }
+  else{
+    analogWrite(3, 150);
+    analogWrite(5, 0);
   }
   delay(10); // Delay a little bit to improve simulation performance
 }
