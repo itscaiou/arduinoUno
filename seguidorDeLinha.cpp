@@ -16,20 +16,20 @@ void loop()
   Serial.println(analogRead(A0));
   Serial.println(analogRead(A1));
   if (analogRead(A0) > 200) {
-    analogWrite(6, 150);
+    analogWrite(6, 180);
     analogWrite(9, 0);
   }
   else{
     analogWrite(6, 0);
-    analogWrite(9, 150);
+    analogWrite(9, 180);
   }
   if (analogRead(A1) > 200) {
-      analogWrite(3, 0);
-      analogWrite(5, 150);
+      analogWrite(3, 180);
+      analogWrite(5, 0);
   }
   else{
-    analogWrite(3, 150);
-    analogWrite(5, 0);
+    analogWrite(3, 0);
+    analogWrite(5, 180);
   }
   delay(10); // Delay a little bit to improve simulation performance
 }
